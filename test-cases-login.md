@@ -6,7 +6,7 @@
 **Pasos:**
 1. Ir a la página de login
 2. Introducir email válido
-3. Introducir password válido
+3. Introducir contraseña válida
 4. Click en "Login"
 
 **Resultado esperado:**
@@ -17,42 +17,41 @@ El usuario accede correctamente al sistema
 **Pasos:**
 1. Ir a login
 2. Introducir email inválido (ej: test@)
-3. Introducir password
+3. Introducir contraseña
 4. Click en "Login"
 
 **Resultado esperado:**
-Se muestra mensaje de error
+Se muestra mensaje de error indicado email inválido
 
-## TC-003: Login con contraseña invalida
+## TC-003: Login con contraseña incorrecta
 **Precondición:**Usuario registrado
 
 **Pasos:** 
 1. Ir al login
 2. Introducir email válido
-3. Introducir contraseña inválida(ej: tester1)
+3. Introducir contraseña incorrecta
 4. Click en "Login"
 ** Resultado esperado:**
-Se muestra mesaje de error
+Se muestra mesaje de error indicando credeniales incorrectas
 
 ## TC-004: Login de usuario no resgistrado
 **Precondición:** Usuario no registrado
 **Pasos:** 
 1. Ir al login
-2. Introducir email 
+2. Introducir email no registrado
 3. Introducir contraseña 
 4. Click en "Login"
 ** Resultado esperado:**
-Se muestra mesaje de error "Usuario no registrado"
+Se muestra mesaje de error "Usuario no existe"
 
-## TC-005: Login demorado
+## TC-005: Login con respuesta lenta del servidor
 **Precondición:** Usuario registrado
 **Pasos:** 
 1. Ir al login
-2. Introducir email 
-3. Introducir contraseña 
+2. Introducir credenciale válidas 
 4. Click en "Login"
 ** Resultado esperado:**
-Se muestra mesaje de error "El servidor tarda demasiado en responder"
+El servidor muestra indiador de carga o meneja el timeout correctamente
 
 ## TC-006: Login con email vacio
 **Precondición:**Usuario registrado
@@ -60,10 +59,10 @@ Se muestra mesaje de error "El servidor tarda demasiado en responder"
 **Pasos:** 
 1. Ir al login
 2. Dejar vacío el campo de email
-3. Introducir contraseña valida(ej: tester1)
+3. Introducir contraseña valida
 4. Click en "Login"
 ** Resultado esperado:**
-Se muestra mesaje de error "debe introducir un email válido"
+Se muestra mesaje de error "email requerido"
 
 ## TC-007: Login con contraseña vacía
 **Precondición:**Usuario registrado
@@ -74,43 +73,41 @@ Se muestra mesaje de error "debe introducir un email válido"
 3. Dejar vacío el campo de contraseña
 4. Click en "Login"
 ** Resultado esperado:**
-Se muestra mesaje de error "debe introducir una contraseña válida"
+Se muestra mesaje de error "contraseña requerida"
 
 ## TC-008: Login con múltiples intentos fallidos
 **Precondición:**Usuario registrado
 
 **Pasos:** 
 1. Ir al login
-2. Introducir email
-3. Dejar vacío el campo de contraseña
-4. Click en "Login"
-5. Repetir la operación al menos 5 veces
+2. Introducir email válido
+3. Introducir contraseña incorrecta
+4. 5. Repetir el intento 5 veces
 ** Resultado esperado:**
-Se bloquea temporalmente al usuario o se muestra un captcha (seguridad)
+El sistema bloquea temporalmente o  muestra un captcha 
 
-## TC-009: Login con caracteres especiales o intento de SQL injection
+## TC-009: Login con intento de SQL injection
 **Precondición:**Usuario registrado
 
 **Pasos:** 
 1. Ir al login
-2. Introducir email
-3. Escribir caracteres especiales (ej:*, '1)
+2. Introducir email: ' OR '1'='1
+3. Introducir cualquier contraseña
 4. Click en "Login"
-5. Repetir la operación al menos 5 veces
 ** Resultado esperado:**
-Sistema rechaza imput y fala
+Sistema rechaza input y no permite acceso
 
 
-## TC-010: Login con espacios en blanco ("   ")en campos
+## TC-010: Login con espacios en blanco
 **Precondición:**Usuario registrado
 
 **Pasos:** 
 1. Ir al login
-2. Introducir email
-3. Escribir el usuario y dejar espacios vacíos(ej: "@tes   t")
-5. Repetir la operación al menos 5 veces
+2. Introducir espacios en el email ("    ")
+3. Introducir contraseña válida
+4. Hacer click en "Login"
 ** Resultado esperado:**
-Validación como campo vacío 
+se valida como campo vacío 
 
 
 
